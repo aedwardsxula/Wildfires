@@ -1,18 +1,20 @@
 # Wildfires
 
 ## Projects in Order of Priority
-### CPSC Events
+### CPSC DegreeWorks
 
-Create an app where CS/CIS/BINF majors, minors, and faculty can create, edit, remove, list, search, RSVP, and get alerts for events based on their profile.
+Create an app that mimics Degree Works once given the URL to a curriculum and a transcript.   Also, display an unofficial transcript that is good enough to be sent to prospective employers.
 
 ### CPSC Core Curriculum Recommender
 
 ### CPSC Course Offerings
 
-### CPSC Degree Works.  
+### CPSC Events
 
 ### CPSC Register
 
 ### CPSC Study Buddies
 
+
+## Preferences
 
