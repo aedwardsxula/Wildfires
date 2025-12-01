@@ -1,3 +1,5 @@
+print('Driver started')
+
 import Transcript
 from student import Student
 from advisor import print_alerts, scan_students, GPA_REQUIREMENT
@@ -82,3 +84,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+print('Driver ends')
