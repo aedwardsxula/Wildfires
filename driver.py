@@ -1,6 +1,7 @@
 import Transcript
 from student import Student
 from advisor import print_alerts, scan_students, GPA_REQUIREMENT
+from login import LoginManager, Role
 
 def main():
     print("Driver code executed.")
@@ -43,6 +44,41 @@ def main():
 
     # Option B: get messages as a list (for UI, logs, email, etc.)
     messages = scan_students(students, threshold=GPA_REQUIREMENT)
+
+    #CODE FOR LOGIN.PY BELOW
+    auth = LoginManager()
+
+    
+    auth.add_user("brandon.rachal@xula.edu", "MySecurePass1!", Role.STUDENT)
+    auth.add_user("dr.edwards@xula.edu", "FacultyPass!", Role.TEACHER)
+    auth.add_user("advisor.jane@xula.edu", "Advisor123!", Role.ADVISOR)
+
+    # Try logging in:
+    attempts = [
+        ("brandon.rachal@xula.edu", "MySecurePass1!"),
+        ("dr.edwards@xula.edu", "wrongpass"),
+        ("advisor.jane@xula.edu", "Advisor123!"),
+    ]
+
+    for username, password in attempts:
+        user = auth.authenticate(username, password)
+        if user:
+            print(f" Login success: {user.username} ({user.role})")
+            if auth.is_advisor(username):
+                print("   → User is an Advisor")
+            elif auth.is_teacher(username):
+                print("   → User is a Teacher")
+            elif auth.is_student(username):
+                print("   → User is a Student")
+        else:
+            print(f" Login failed for {username}")
+
+    # Example: gate a feature by role
+    username = "advisor.jane@xula.edu"
+    if auth.is_advisor(username):
+        print(f"\n{username} can see GPA alerts dashboard.")
+    else:
+        print(f"\n{username} is not allowed to view GPA alerts.")
 
 if __name__ == "__main__":
     main()
