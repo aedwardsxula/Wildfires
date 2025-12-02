@@ -2,6 +2,7 @@ print('Driver started')
 
 import Transcript
 from student import Student
+from professor import Professor
 from advisor import print_alerts, scan_students, GPA_REQUIREMENT
 from login import LoginManager, Role
 
@@ -31,6 +32,21 @@ def main():
     s2.add_grade("ENGR 2010", "D")
     s2.add_grade("MATH 2070", "F")
     s2.calculate_gpa()
+    
+    # ---- Professor enters midterm & final grades ----
+    prof = Professor("Dr. Edwards")
+
+    # Example: professor enters new grades for student s1
+    prof.enter_midterm_grade(s1, 88.5)
+    prof.enter_final_grade(s1, 93.0)
+
+    # Example: professor enters grades for student s2
+    prof.enter_midterm_grade(s2, 72.0)
+    prof.enter_final_grade(s2, 65.0)
+
+    print("\n--- TRANSCRIPTS UPDATED BY PROFESSOR ---")
+    prof.view_transcript(s1)
+    prof.view_transcript(s2)
 
     students = [s1, s2]
 
@@ -81,6 +97,7 @@ def main():
         print(f"\n{username} can see GPA alerts dashboard.")
     else:
         print(f"\n{username} is not allowed to view GPA alerts.")
+
 
 if __name__ == "__main__":
     main()
