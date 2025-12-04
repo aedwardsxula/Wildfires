@@ -1,5 +1,45 @@
 # Wildfires
 
+## What happens when Dr. Edwards runs your code
+
+ERROR: No matching distribution found for requirements.txt
+
+```
+Driver started
+Driver code executed.
+Name: Brandon Rachal
+Classification: Junior
+Major: Computer Science
+Minor: Business
+GPA: 3.67
+Enrolled Classes: CPSC 2735, CPSC 2120, Math 2050
+Grades: {'CPSC 2735': 'A', 'CPSC 2120': 'B', 'Math 2050': 'A'}
+Has a minor? True
+--- Advisor Alerts (threshold = 2.0) ---
+✅ Brandon Rachal meets GPA requirements (3.67 ≥ 2.00).
+⚠️ ALERT: Chris Jackson (Sophomore) is below the GPA requirement (0.50 < 2.00).
+Major: Engineering  |  Minor: None
+Enrolled: ENGR 2010, MATH 2070
+Advisor Action: Reach out and offer support.
+
+Total below threshold: 1
+
+ Login success: brandon.rachal@xula.edu (Role.STUDENT)
+   → User is a Student
+ Login failed for dr.edwards@xula.edu
+ Login success: advisor.jane@xula.edu (Role.ADVISOR)
+   → User is an Advisor
+
+advisor.jane@xula.edu can see GPA alerts dashboard.
+Driver ends
+```
+
+## What happens when Dr. Edwards runs your tests
+
+No instructions were provided for how to test your code.
+
+I don't see any tests in your code.  Why would you write all this code without testing it?
+
 ## Final Release Checklist
 - [X_] README states purpose, contributors, and how to build, run, and test all the code from the CLI.  Build and run should not assume everyone is using a particular IDE (so don't assume users can click a Run button or use VSC's Command Prompt commands.
 - [X ] SDD has the project description, outline, architecture (including UML class diagrams), and all project user stories and use cases.
